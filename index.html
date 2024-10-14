@@ -7,70 +7,74 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <h1>Lead Capture</h1>
-    <form id="leadForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="Name" value="New Lead" readonly>
-        <br>
-        <div class="hidden-field">
-        <label for="nameLanguageCode">Name Language Code:</label>
-        <input type="input" id="nameLanguageCode" name="NameLanguageCode" value="EN" readonly>
-        <br>
-        </div>
-        <label for="individualCustomerGivenName">Given Name:</label>
-        <input type="text" id="individualCustomerGivenName" name="IndividualCustomerGivenName" value="Obada">
-        <br>
-        <label for="individualCustomerFamilyName">Family Name:</label>
-        <input type="text" id="individualCustomerFamilyName" name="IndividualCustomerFamilyName" value="Sayed">
-        <br>
-        <div class="hidden-field">
-        <label for="qualificationLevelCode">Qualification Level Code:</label>
-        <input type="input" id="qualificationLevelCode" name="QualificationLevelCode" value="01">
-        <br>
-        </div>
-        <div class="hidden-field">
-        <label for="originTypeCode">Origin Type Code:</label>
-        <input type="input" id="originTypeCode" name="OriginTypeCode" value="ZS4">
-        <br>
-        </div>
-        <div class="hidden-field">
-        <label for="salesOfficeID">Sales Office ID:</label>
-        <input type="input" id="salesOfficeID" name="SalesOfficeID" value="1-100-1">
-        <br>
-        </div>
-        <label for="note">Note:</label>
-        <textarea id="note" name="Note">OData Test</textarea>
-        <br>
-        <label for="individualCustomerEMail">Email:</label>
-        <input type="email" id="individualCustomerEMail" name="IndividualCustomerEMail" value="obada.sayed@sap.com">
-        <br>
-        <label for="individualCustomerPhone">Phone:</label>
-        <input type="tel" id="individualCustomerPhone" name="IndividualCustomerPhone" value="+971565489533">
-        <br>
-        <label for="individualCustomerAddressCity">City:</label>
-        <input type="text" id="individualCustomerAddressCity" name="IndividualCustomerAddressCity" value="Dubai">
-        <br>
-        <label for="individualCustomerAddressCountry">Country:</label>
-        <input type="text" id="individualCustomerAddressCountry" name="IndividualCustomerAddressCountry" value="AE">
-        <br>
-        <div class="hidden-field">
-        <label for="brand2_KUT">Brand2_KUT:</label>
-        <input type="input" id="brand2_KUT" name="Brand2_KUT" value="101">
-        <br>
-        </div>
-        <div class="hidden-field">
-        <label for="model2_KUT">Model2_KUT:</label>
-        <input type="input" id="model2_KUT" name="Model2_KUT" value="101">
-        <br>
-        </div>
-        <div class="hidden-field">
-        <label for="ownerPartyUUID">OwnerPartyUUID:</label>
-        <input type="input" id="ownerPartyUUID" name="OwnerPartyUUID" value="55093869-CF70-1EEF-A082-54CA495FFAF7">
-        <br>
-        </div>
-        <button type="submit">Submit</button>
-    </form>
-
+    <header>
+        <h1>Lead Capture Form</h1>
+    </header>
+    <main>
+        <form id="leadForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="Name" value="New Lead" readonly>
+            </div>
+            <div class="form-group hidden-field">
+                <label for="nameLanguageCode">Name Language Code:</label>
+                <input type="input" id="nameLanguageCode" name="NameLanguageCode" value="EN" readonly>
+            </div>
+            <div class="form-group">
+                <label for="individualCustomerGivenName">Given Name:</label>
+                <input type="text" id="individualCustomerGivenName" name="IndividualCustomerGivenName" value="Obada">
+            </div>
+            <div class="form-group">
+                <label for="individualCustomerFamilyName">Family Name:</label>
+                <input type="text" id="individualCustomerFamilyName" name="IndividualCustomerFamilyName" value="Sayed">
+            </div>
+            <div class="form-group hidden-field">
+                <label for="qualificationLevelCode">Qualification Level Code:</label>
+                <input type="input" id="qualificationLevelCode" name="QualificationLevelCode" value="01">
+            </div>
+            <div class="form-group hidden-field">
+                <label for="originTypeCode">Origin Type Code:</label>
+                <input type="input" id="originTypeCode" name="OriginTypeCode" value="ZS4">
+            </div>
+            <div class="form-group hidden-field">
+                <label for="salesOfficeID">Sales Office ID:</label>
+                <input type="input" id="salesOfficeID" name="SalesOfficeID" value="1-100-1">
+            </div>
+            <div class="form-group">
+                <label for="note">Note:</label>
+                <textarea id="note" name="Note">OData Test</textarea>
+            </div>
+            <div class="form-group">
+                <label for="individualCustomerEMail">Email:</label>
+                <input type="email" id="individualCustomerEMail" name="IndividualCustomerEMail" value="obada.sayed@sap.com">
+            </div>
+            <div class="form-group">
+                <label for="individualCustomerPhone">Phone:</label>
+                <input type="tel" id="individualCustomerPhone" name="IndividualCustomerPhone" value="+971565489533">
+            </div>
+            <div class="form-group">
+                <label for="individualCustomerAddressCity">City:</label>
+                <input type="text" id="individualCustomerAddressCity" name="IndividualCustomerAddressCity" value="Dubai">
+            </div>
+            <div class="form-group">
+                <label for="individualCustomerAddressCountry">Country:</label>
+                <input type="text" id="individualCustomerAddressCountry" name="IndividualCustomerAddressCountry" value="AE">
+            </div>
+            <div class="form-group hidden-field">
+                <label for="brand2_KUT">Brand2_KUT:</label>
+                <input type="input" id="brand2_KUT" name="Brand2_KUT" value="101">
+            </div>
+            <div class="form-group hidden-field">
+                <label for="model2_KUT">Model2_KUT:</label>
+                <input type="input" id="model2_KUT" name="Model2_KUT" value="101">
+            </div>
+            <div class="form-group hidden-field">
+                <label for="ownerPartyUUID">OwnerPartyUUID:</label>
+                <input type="input" id="ownerPartyUUID" name="OwnerPartyUUID" value="55093869-CF70-1EEF-A082-54CA495FFAF7">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
