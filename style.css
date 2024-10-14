@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: #333; /* Replace with your desired header color */
+    background-color: #333;
     color: #fff;
     padding: 1em;
     text-align: center;
@@ -41,7 +41,7 @@ textarea {
 }
 
 button {
-    background-color: #007bff; /* Replace with your desired button color */
+    background-color: #007bff;
     color: #fff;
     padding: 0.7em 1em;
     border: none;
@@ -50,7 +50,7 @@ button {
 }
 
 button:hover {
-    background-color: #0069d9; /* Change hover color for the button */
+    background-color: #0069d9;
 }
 
 .hidden-field {
