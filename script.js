@@ -2,44 +2,41 @@ const form = document.getElementById('leadForm');
 const API_URL = 'https://my349193.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/LeadCollection';
 
 form.addEventListener('submit', async (event) => {
-  event.preventDefault();
+  event.preventDefault(); // Prevents form from submitting the default way
 
-  // Collect form data
-  const data = new FormData(form);
-
-  // Prepare the Basic Authentication header (username and password should ideally be securely managed)
-  const username = '_GDM'; // Replace with your actual username
-  const password = 'Welcome1'; // Replace with your actual password
-  const encodedCredentials = btoa(`${username}:${password}`);
-
-  // Prepare the data in JSON format (OData typically accepts JSON payloads)
-  const jsonData = {
-    Name: data.get('Name'),
-    IndividualCustomerGivenName: data.get('IndividualCustomerGivenName'),
-    IndividualCustomerFamilyName: data.get('IndividualCustomerFamilyName'),
-    IndividualCustomerEMail: data.get('IndividualCustomerEMail'),
-    IndividualCustomerPhone: data.get('IndividualCustomerPhone'),
-    IndividualCustomerAddressCity: data.get('IndividualCustomerAddressCity'),
-    IndividualCustomerAddressCountry: data.get('IndividualCustomerAddressCountry'),
-    Note: data.get('Note'),
-    NameLanguageCode: data.get('NameLanguageCode'),
-    QualificationLevelCode: data.get('QualificationLevelCode'),
-    OriginTypeCode: data.get('OriginTypeCode'),
-    SalesOfficeID: data.get('SalesOfficeID'),
-    Brand2_KUT: data.get('Brand2_KUT'),
-    Model2_KUT: data.get('Model2_KUT'),
-    OwnerPartyUUID: data.get('OwnerPartyUUID'),
+  // Collect the form data
+  const data = {
+    Name: document.getElementById('name').value,
+    IndividualCustomerGivenName: document.getElementById('individualCustomerGivenName').value,
+    IndividualCustomerFamilyName: document.getElementById('individualCustomerFamilyName').value,
+    IndividualCustomerEMail: document.getElementById('individualCustomerEMail').value,
+    IndividualCustomerPhone: document.getElementById('individualCustomerPhone').value,
+    IndividualCustomerAddressCity: document.getElementById('individualCustomerAddressCity').value,
+    IndividualCustomerAddressCountry: document.getElementById('individualCustomerAddressCountry').value,
+    Note: document.getElementById('note').value,
+    NameLanguageCode: document.getElementById('nameLanguageCode').value,
+    QualificationLevelCode: document.getElementById('qualificationLevelCode').value,
+    OriginTypeCode: document.getElementById('originTypeCode').value,
+    SalesOfficeID: document.getElementById('salesOfficeID').value,
+    Brand2_KUT: document.getElementById('brand2_KUT').value,
+    Model2_KUT: document.getElementById('model2_KUT').value,
+    OwnerPartyUUID: document.getElementById('ownerPartyUUID').value
   };
+
+  // Encode username and password for Basic Authentication
+  const username = '_GDM'; // Replace with actual username
+  const password = 'Welcome1'; // Replace with actual password
+  const encodedCredentials = btoa(`${username}:${password}`);
 
   try {
     const response = await fetch(API_URL, {
       method: 'POST',
       headers: {
-        'Authorization': `Basic ${encodedCredentials}`, // Pass credentials for authentication
+        'Authorization': `Basic ${encodedCredentials}`,
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify(jsonData) // Send the form data in the request body
+      body: JSON.stringify(data) // Convert data to JSON format
     });
 
     if (response.ok) {
@@ -48,11 +45,11 @@ form.addEventListener('submit', async (event) => {
       alert('Lead submitted successfully!');
     } else {
       const errorData = await response.json();
-      console.error('Error submitting lead:', errorData);
-      alert('There was an error submitting the lead.');
+      console.error('API responded with an error:', errorData);
+      alert('Error submitting lead. Check console for details.');
     }
   } catch (error) {
     console.error('Network or server error:', error);
-    alert('There was a network or server error.');
+    alert('Network or server error. Check console for details.');
   }
 });
