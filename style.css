@@ -56,3 +56,24 @@ button:hover {
 .hidden-field {
     display: none;
 }
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+/* Optional: Add hover effect */
+select:hover {
+    border-color: #888;
+}
+
+/* Consistent styling for all input fields */
+input, textarea, select {
+    font-family: Arial, sans-serif; /* Ensure consistency in font */
+}
