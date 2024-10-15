@@ -30,6 +30,7 @@ form.addEventListener('submit', async (event) => {
   try {
     const response = await fetch(API_URL, {
       method: 'POST',
+      mode: 'no-cors',
       headers: {
         'Authorization': `Basic ${encodedCredentials}`,
         'Content-Type': 'application/json',
