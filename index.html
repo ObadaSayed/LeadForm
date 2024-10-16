@@ -4,93 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lead Capture Form</title>
-    <link rel="stylesheet" href="style.css"> 
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .menu-container {
+            display: flex;
+            align-items: center;
+        }
+        .menu-item {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+        main {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 200px;
+            padding: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Lead Capture Form</h1>
-    </header>
-    <main>
-        <form id="leadForm">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="Name" value="New Lead">
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="https://d2638j3z8ek976.cloudfront.net/0c20c4869c596c2a0ec3210f7ed3225900cbcd80/1726758530/images/logo.png" alt="Samaco Motors">
+                <img src="https://d2638j3z8ek976.cloudfront.net/0c20c4869c596c2a0ec3210f7ed3225900cbcd80/1726758530/images/edition/volkswagen/franchise-badge.png" alt="Volkswagen">
             </div>
-            <div class="form-group">
-                <label for="individualCustomerGivenName">Given Name:</label>
-                <input type="text" id="individualCustomerGivenName" name="IndividualCustomerGivenName" value="Obada">
+            <div class="menu-container">
+                <a href="#" class="menu-item">MENU</a>
+                <a href="#" class="menu-item">CALL</a>
+                <a href="#" class="menu-item">عربي</a>
             </div>
-            <div class="form-group">
-                <label for="individualCustomerFamilyName">Family Name:</label>
-                <input type="text" id="individualCustomerFamilyName" name="IndividualCustomerFamilyName" value="Sayed">
-            </div>
-            <div class="form-group">
-                <label for="note">Note:</label>
-                <textarea id="note" name="Note">OData Test</textarea>
-            </div>
-            <div class="form-group">
-                <label for="individualCustomerEMail">Email:</label>
-                <input type="email" id="individualCustomerEMail" name="IndividualCustomerEMail" value="obada.sayed@sap.com">
-            </div>
-            <div class="form-group">
-                <label for="individualCustomerPhone">Phone:</label>
-                <input type="tel" id="individualCustomerPhone" name="IndividualCustomerPhone" value="+971565489533">
-            </div>
-            <div class="form-group">
-                <label for="individualCustomerAddressCity">City:</label>
-                <input type="text" id="individualCustomerAddressCity" name="IndividualCustomerAddressCity" value="Dubai">
-            </div>
-            <div class="form-group">
-                <label for="individualCustomerAddressCountry">Country:</label>
-                <input type="text" id="individualCustomerAddressCountry" name="IndividualCustomerAddressCountry" value="AE">
-            </div>
-
-            <!-- Brand Dropdown -->
-            <div class="form-group">
-                <label for="brand2_KUT">Brand:</label>
-                <select id="brand2_KUT" name="Brand2_KUT">
-                    <option value="101">Volks Wagen</option>
-                    <option value="111">Audi</option>
-                    <option value="121">Porsche</option>
-                </select>
-            </div>
-
-            <!-- Model Dropdown -->
-            <div class="form-group">
-                <label for="model2_KUT">Model:</label>
-                <select id="model2_KUT" name="Model2_KUT">
-                    <option value="101">Touareg</option>
-                    <option value="111">Golf</option>
-                    <option value="121">Teramont</option>
-                    <option value="131">Tiguan</option>
-                </select>
-            </div>
-
-            <!-- Remaining Hidden Fields -->
-            <div class="form-group hidden-field">
-                <label for="nameLanguageCode">Name Language Code:</label>
-                <input type="input" id="nameLanguageCode" name="NameLanguageCode" value="EN">
-            </div>
-            <div class="form-group hidden-field">
-                <label for="qualificationLevelCode">Qualification Level Code:</label>
-                <input type="input" id="qualificationLevelCode" name="QualificationLevelCode" value="01">
-            </div>
-            <div class="form-group hidden-field">
-                <label for="originTypeCode">Origin Type Code:</label>
-                <input type="input" id="originTypeCode" name="OriginTypeCode" value="ZS4">
-            </div>
-            <div class="form-group hidden-field">
-                <label for="salesOfficeID">Sales Office ID:</label>
-                <input type="input" id="salesOfficeID" name="SalesOfficeID" value="1-100-1">
-            </div>
-            <div class="form-group hidden-field">
-                <label for="ownerPartyUUID">OwnerPartyUUID:</label>
-                <input type="input" id="ownerPartyUUID" name="OwnerPartyUUID" value="55093869-CF70-1EEF-A082-54CA495FFAF7">
-            </div>
-
-            <button type="submit">Submit</button>
-        </form>
-    </main>
-    <script src="script.js"></script>
+        </header>
+        <main>
+            <h1>Lead Capture Form</h1>
+            <form id="leadForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="Name" value="New Lead">
+                </div>
+                <div class="form-group">
+                    <label for="individualCustomerGivenName">Given Name:</label>
+                    <input type="text" id="individualCustomerGivenName" name="IndividualCustomerGivenName" value="Obada">
+                </div>
+                <div class="form-group">
+                    <label for="individualCustomerFamilyName">Family Name:</label>
+                    <input type="text" id="individualCustomerFamilyName" name="IndividualCustomerFamilyName" value="Sayed">
+                </div>
+                <div class="form-group">
+                    <label for="note">Note:</label>
+                    <textarea id="note" name="Note">OData Test</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="individualCustomerEMail">Email:</label>
+                    <input type="email" id="individualCustomerEMail" name="IndividualCustomerEMail" value="obada.sayed@sap.com">
+                </div>
+                <div class="form-group">
+                    <label for="individualCustomerPhone">Phone:</label>
+                    <input type="tel" id="individualCustomerPhone" name="IndividualCustomerPhone" value="+971565489533">
+                </div>
+                <div class="form-group">
+                    <label for="individualCustomerAddressCity">City:</label>
+                    <input type="text" id="individualCustomerAddressCity" name="IndividualCustomerAddressCity" value="Dubai">
+                </div>
+                <div class="form-group">
+                    <label for="individualCustomerAddressCountry">Country:</label>
+                    <input type="text" id="individualCustomerAddressCountry" name="IndividualCustomerAddressCountry" value="AE">
+                </div>
+                <div class="form-group">
+                    <label for="brand2_KUT">Brand:</label>
+                    <select id="brand2_KUT" name="Brand2_KUT">
+                        <option value="101">Volks Wagen</option>
+                        <option value="111">Audi</option>
+                        <option value="121">Porsche</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="model2_KUT">Model:</label>
+                    <select id="model2_KUT" name="Model2_KUT">
+                        <option value="101">Touareg</option>
+                        <option value="111">Golf</option>
+                        <option value="121">Teramont</option>
+                        <option value="131">Tiguan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nameLanguageCode">Name Language Code:</label>
+                    <input type="text" id="nameLanguageCode" name="NameLanguageCode" value="EN">
+                </div>
+                <div class="form-group">
+                    <label for="qualificationLevelCode">Qualification Level Code:</label>
+                    <input type="text" id="qualificationLevelCode" name="QualificationLevelCode" value="01">
+                </div>
+                <div class="form-group">
+                    <label for="originTypeCode">Origin Type Code:</label>
+                    <input type="text" id="originTypeCode" name="OriginTypeCode" value="ZS4">
+                </div>
+                <div class="form-group">
+                    <label for="salesOfficeID">Sales Office ID:</label>
+                    <input type="text" id="salesOfficeID" name="SalesOfficeID" value="1-100-1">
+                </div>
+                <div class="form-group">
+                    <label for="ownerPartyUUID">OwnerPartyUUID:</label>
+                    <input type="text" id="ownerPartyUUID" name="OwnerPartyUUID" value="55093869-CF70-1EEF-A082-54CA495FFAF7">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+    </div>
 </body>
 </html>
